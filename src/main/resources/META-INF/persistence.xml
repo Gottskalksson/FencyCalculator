@@ -1,0 +1,28 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+  version="2.1">
+  <persistence-unit name="fencyCalculator">
+    <properties>
+      <property name="javax.persistence.jdbc.url"
+        value="jdbc:mysql://remotemysql.com:3306/JMkBNTLWrV?serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.user" value="JMkBNTLWrV"/>
+      <property name="javax.persistence.jdbc.password" value="SM3F9SsY5A"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.schema-generation.database.action"
+        value="none"/>
+      <property name="hibernate.dialect"
+        value="org.hibernate.dialect.MySQL57Dialect"/>
+      <property name="hibernate.connection.characterEncoding" value="utf8"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+<!--      proprerty to refresh connect with db -->
+      <property name="hibernate.c3p0.min_size" value="5" />
+      <property name="hibernate.c3p0.max_size" value="20" />
+      <property name="hibernate.c3p0.timeout" value="300" />
+
+    </properties>
+  </persistence-unit>
+</persistence>
