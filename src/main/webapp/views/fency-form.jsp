@@ -7,13 +7,9 @@
 </head>
 <body>
 <form:form modelAttribute="fency" method="post" action="/admin/fency/add">
-    <form:label path="typeMeter">Type (in mm): </form:label>
-    <form:input path="typeMeter"/><br>
-    <form:errors path="typeMeter" cssClass="errorMessage"/>
-
-    <form:label path="typeFoot">Type (in foot): </form:label>
-    <form:input path="typeFoot"/><br>
-    <form:errors path="typeFoot" cssClass="errorMessage"/>
+    <form:label path="type">Type (description on website): </form:label>
+    <form:input path="type"/><br>
+    <form:errors path="type" cssClass="errorMessage"/>
 
     <form:label path="pricePerM3">Price (per m<sup>3</sup>): </form:label>
     <form:input path="pricePerM3"/><br>

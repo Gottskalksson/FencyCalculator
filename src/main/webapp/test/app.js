@@ -1,16 +1,17 @@
 $(function () {
     var button = $("#button");
     var result = $("#result");
-    var noLabourCheckbox = $("#noLabour");
-    var labourRow = $("#labour");
-
+    var selectUnit = $("#unit");
 
     button.on("click", function () {
         result.css("visibility", "visible");
     });
 
-    noLabourCheckbox.on("click", function () {
-        // console.log("dziala");
-        console.log(noLabourCheckbox.checked);
-    })
+    selectUnit.on("click", function () {
+        if (selectUnit.val() === "meter") {
+            $("#fencyList").val();
+        } else {
+            console.log("stopa");
+        }
+    });
 });

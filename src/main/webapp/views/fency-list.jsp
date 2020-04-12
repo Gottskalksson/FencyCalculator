@@ -7,9 +7,10 @@
 <body>
 
 <a href="/admin/fency/add">Add new position</a> <br>
+<a href="/admin">Back to Admin Panel</a> <br>
+<br>
     <c:forEach items="${fencyList}" var="fency">
-        <p>Type (meter): ${fency.typeMeter}</p>
-        <p>Type (foot): ${fency.typeFoot}</p>
+        <p>Type: ${fency.type}</p>
         <p>Price per m<sup>3</sup>: £${fency.pricePerM3} </p>
         <p>Price per piece: £${fency.pricePerPiece} </p>
         <a href="/admin/fency/edit/${fency.id}">Edit item</a>

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Calculator</title>
@@ -13,22 +14,13 @@
         <tr>
             <td width="107" valign="top">Fence Type:</td>
             <td colspan="4">
-                <select id="fenceType" style="width: 300px">
-                    <option class="fence" id="900095">0.9m x 95 x 18</option>
-                    <option class="fence" id="1200095">1.2m x 95 x 18</option>
-                    <option class="fence" id="1500095">1.5m x 95 x 18</option>
-                    <option class="fence" id="1500150">1.5m x 150 x 18</option>
-                    <option class="fence" id="1800095">1.8m x 95 x 18</option>
-                    <option class="fence" id="1800150">1.8m x 150 x 18</option>
-                    <option class="fence" id="3600150">3.6m x 150 x 18</option>
-                    <option class="fence" id="4800150">4.8m x 150 x 18</option>
-                </select>
+                <form:select path="fencyList" items="${fencyList}" itemLabel="type" itemValue="id" />
             </td>
         </tr>
         <tr>
             <td width="50" valign="top">Fence Length:</td>
             <td colspan="4">
-                <input class="fenceLength" type="number" value="1" min="1" step="0.1">
+                <input class="fenceLength" type="number" value="1" min="1" step="0.1"> meter
             </td>
         </tr>
         <tr>

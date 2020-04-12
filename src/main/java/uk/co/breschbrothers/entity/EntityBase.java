@@ -14,10 +14,7 @@ public abstract class EntityBase {
     private long id;
 
     @NotNull
-    private String typeMeter;
-
-    @NotNull
-    private String typeFoot;
+    private String type;
 
     @Min(0)
     private double pricePerM3;
@@ -42,20 +39,12 @@ public abstract class EntityBase {
         this.id = id;
     }
 
-    public String getTypeMeter() {
-        return typeMeter;
+    public String getType() {
+        return type;
     }
 
-    public void setTypeMeter(String type) {
-        this.typeMeter = type;
-    }
-
-    public String getTypeFoot() {
-        return typeFoot;
-    }
-
-    public void setTypeFoot(String typeFoot) {
-        this.typeFoot = typeFoot;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public double getPricePerM3() {

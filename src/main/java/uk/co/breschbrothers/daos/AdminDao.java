@@ -18,10 +18,6 @@ public class AdminDao {
     @PersistenceContext
     EntityManager entityManager;
 
-    public void save(Admin admin) {
-        entityManager.persist(admin);
-    }
-
     public boolean checkAdminData(String username, String password) {
         Query query = entityManager.createQuery("SELECT a from Admin a");
         List<Admin> adminList = query.getResultList();

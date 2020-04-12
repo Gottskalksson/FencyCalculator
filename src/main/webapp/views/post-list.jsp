@@ -6,9 +6,10 @@
 </head>
 <body>
 <a href="/admin/post/add">Add new position</a> <br>
+<a href="/admin">Back to Admin Panel</a> <br>
+<br>
     <c:forEach items="${postList}" var="post">
-        <p>Type (meter): ${post.typeMeter}</p>
-        <p>Type (foot): ${post.typeFoot}</p>
+        <p>Type: ${post.type}</p>
         <p>Price per m<sup>3</sup>: £${post.pricePerM3} </p>
         <p>Price per piece: £${post.pricePerPiece} </p>
         <a href="/admin/post/edit/${post.id}">Edit item</a>

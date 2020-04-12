@@ -6,9 +6,10 @@
 </head>
 <body>
 <a href="/admin/rail/add">Add new position</a> <br>
+<a href="/admin">Back to Admin Panel</a> <br>
+<br>
     <c:forEach items="${railList}" var="rail">
-        <p>Type (meter): ${rail.typeMeter}</p>
-        <p>Type (foot): ${rail.typeFoot}</p>
+        <p>Type: ${rail.type}</p>
         <p>Price per m<sup>3</sup>: £${rail.pricePerM3} </p>
         <p>Price per piece: £${rail.pricePerPiece} </p>
         <a href="/admin/rail/edit/${rail.id}">Edit item</a>
