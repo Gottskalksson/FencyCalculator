@@ -13,6 +13,7 @@
         <p>Type: ${fency.type}</p>
         <p>Price per m<sup>3</sup>: £${fency.pricePerM3} </p>
         <p>Price per piece: £${fency.pricePerPiece} </p>
+        <p>Post type: ${fency.post.type} </p>
         <a href="/admin/fency/edit/${fency.id}">Edit item</a>
         <a href="/admin/fency/delete/${fency.id}">Delete item</a>
         <hr/>

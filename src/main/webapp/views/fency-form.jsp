@@ -15,6 +15,11 @@
     <form:input path="pricePerM3"/><br>
     <form:errors path="pricePerM3" cssClass="errorMessage"/>
 
+    <form:label path="post">Post type: </form:label>
+    <form:select path="post" items="${posts}" itemLabel="type" itemValue="id" /><br>
+<%--    <form:errors path="posts" cssClass="errorMessage"/>--%>
+
+
     <form:label path="length">Length (in mm): </form:label>
     <form:input path="length"/><br>
     <form:errors path="length" cssClass="errorMessage"/>

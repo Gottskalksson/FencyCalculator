@@ -3,9 +3,12 @@ package uk.co.breschbrothers.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import uk.co.breschbrothers.daos.FencyDao;
+import uk.co.breschbrothers.daos.PostDao;
 import uk.co.breschbrothers.entity.Fency;
+import uk.co.breschbrothers.entity.Post;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Valid;
@@ -18,11 +21,13 @@ import java.util.Set;
 public class FencyController {
 
     private final FencyDao fencyDao;
+    private final PostDao postDao;
     private final Validator validator;
 
     @Autowired
-    public FencyController(FencyDao fencyDao, Validator validator) {
+    public FencyController(FencyDao fencyDao, PostDao postDao, Validator validator) {
         this.fencyDao = fencyDao;
+        this.postDao = postDao;
         this.validator = validator;
     }
 
@@ -33,11 +38,11 @@ public class FencyController {
     }
 
     @PostMapping("/add")
-    public String validateFency (@ModelAttribute @Valid Fency fency) {
+    public String validateFency (@ModelAttribute @Valid Fency fency, BindingResult result) {
 
-        Set<ConstraintViolation<@Valid Fency>> violations = validator.validate(fency);
+//        Set<ConstraintViolation<@Valid Fency>> violations = validator.validate(fency);
 
-        if (violations.isEmpty()) {
+        if (!result.hasErrors()) {
             if (fency.getId() > 0) {
                 fency.setPricePerPiece();
                 fencyDao.update(fency);
@@ -45,12 +50,24 @@ public class FencyController {
                 fency.setPricePerPiece();
                 fencyDao.save(fency);
             }
-
             return "redirect: /admin/fency/list";
         } else {
-            violations.forEach(System.out::println);
-            return "redirect:" + ((fency.getId() > 0) ? "/admin/fency/edit/" + fency.getId() : "admin/fency/add");
+            return "fency-form";
         }
+//        if (violations.isEmpty()) {
+//            if (fency.getId() > 0) {
+//                fency.setPricePerPiece();
+//                fencyDao.update(fency);
+//            } else {
+//                fency.setPricePerPiece();
+//                fencyDao.save(fency);
+//            }
+//
+//            return "redirect: /admin/fency/list";
+//        } else {
+//            violations.forEach(System.out::println);
+//            return "redirect:" + ((fency.getId() > 0) ? "/admin/fency/edit/" + fency.getId() : "admin/fency/add");
+//        }
     }
 
     @RequestMapping("/edit/{id}")
@@ -73,6 +90,9 @@ public class FencyController {
         fencyDao.delete(fency);
         return "redirect:/admin/fency/list";
     }
+
+    @ModelAttribute("posts")
+    public List<Post> posts() {return postDao.findAll();}
 
 
 }
