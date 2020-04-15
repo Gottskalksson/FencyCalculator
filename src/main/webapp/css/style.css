@@ -1,7 +1,11 @@
-#result {
+#app {
     visibility: hidden;
 }
 
 .title {
     font-weight: bold;
+}
+
+.price {
+    text-align: right;
 }

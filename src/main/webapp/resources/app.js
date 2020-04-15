@@ -1,10 +1,28 @@
 $(function () {
     var button = $("#button");
-    var result = $("#result");
-    var selectUnit = $("#unit");
+    var fencyForm = $("#fencyForm");
+    var app = $("#app");
 
-    button.on("click", function () {
-        result.css("visibility", "visible");
-    });
+    function apiCall(method, path, data) {
+        var settings = {
+            method: method,
+            url: "http://localhost:8080" + path,
+            contentType: "text"
+        };
+        if (data) {
+            settings.data = JSON.stringify(data);
+        }
+        return $.ajax(settings);
+    }
+
+
+    function handlingForm() {
+        fencyForm.on("submit", function (e) {
+            e.preventDefault();
+            app.css("visibility", "visible");
+        });
+    }
+
+    handlingForm();
 
 });

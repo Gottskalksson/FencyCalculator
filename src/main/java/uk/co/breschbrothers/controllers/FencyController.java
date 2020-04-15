@@ -10,11 +10,9 @@ import uk.co.breschbrothers.daos.PostDao;
 import uk.co.breschbrothers.entity.Fency;
 import uk.co.breschbrothers.entity.Post;
 
-import javax.validation.ConstraintViolation;
 import javax.validation.Valid;
 import javax.validation.Validator;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping(value = "/admin/fency", produces = "text/plain;charset=utf-8")
@@ -40,8 +38,6 @@ public class FencyController {
     @PostMapping("/add")
     public String validateFency (@ModelAttribute @Valid Fency fency, BindingResult result) {
 
-//        Set<ConstraintViolation<@Valid Fency>> violations = validator.validate(fency);
-
         if (!result.hasErrors()) {
             if (fency.getId() > 0) {
                 fency.setPricePerPiece();
@@ -54,20 +50,6 @@ public class FencyController {
         } else {
             return "fency-form";
         }
-//        if (violations.isEmpty()) {
-//            if (fency.getId() > 0) {
-//                fency.setPricePerPiece();
-//                fencyDao.update(fency);
-//            } else {
-//                fency.setPricePerPiece();
-//                fencyDao.save(fency);
-//            }
-//
-//            return "redirect: /admin/fency/list";
-//        } else {
-//            violations.forEach(System.out::println);
-//            return "redirect:" + ((fency.getId() > 0) ? "/admin/fency/edit/" + fency.getId() : "admin/fency/add");
-//        }
     }
 
     @RequestMapping("/edit/{id}")
