@@ -1,28 +1,16 @@
 $(function () {
-    var button = $("#button");
-    var fencyForm = $("#fencyForm");
-    var app = $("#app");
+    var itemPrices = $(".itemPrice");
+    var prices = $(".price");
+    var pound = "£ ";
 
-    function apiCall(method, path, data) {
-        var settings = {
-            method: method,
-            url: "http://localhost:8080" + path,
-            contentType: "text"
-        };
-        if (data) {
-            settings.data = JSON.stringify(data);
-        }
-        return $.ajax(settings);
+    var totalPrice = 0;
+
+    for (var i = 0; i < itemPrices.length; i++) {
+        totalPrice = totalPrice -  (-itemPrices[i].innerText);
     }
 
-
-    function handlingForm() {
-        fencyForm.on("submit", function (e) {
-            e.preventDefault();
-            app.css("visibility", "visible");
-        });
-    }
-
-    handlingForm();
+    prices[0].innerText = pound + totalPrice.toFixed(2);
+    prices[1].innerText = pound + (totalPrice * 0.2).toFixed(2);
+    prices[2].innerText = pound + (totalPrice * 1.2).toFixed(2);
 
 });
