@@ -7,6 +7,7 @@ $(function () {
 
     for (var i = 0; i < itemPrices.length; i++) {
         totalPrice = totalPrice -  (-itemPrices[i].innerText);
+        itemPrices[i].innerText = (pound + itemPrices[i].innerText);
     }
 
     prices[0].innerText = pound + totalPrice.toFixed(2);

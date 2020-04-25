@@ -34,5 +34,6 @@
 
 
 </form:form>
+<a href="${pageContext.request.contextPath}/admin/post/list">Back to the list</a>
 </body>
 </html>

@@ -21,5 +21,6 @@
 
 
 </form:form>
+<a href="${pageContext.request.contextPath}/admin/another/list">Back to the list</a>
 </body>
 </html>

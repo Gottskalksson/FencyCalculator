@@ -20,7 +20,7 @@ public class AdminController {
     private final AdminDao adminDao;
 
     @Autowired
-    public AdminController(AdminDao adminDao) {
+    public AdminController(final AdminDao adminDao) {
         this.adminDao = adminDao;
     }
 

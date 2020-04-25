@@ -33,6 +33,8 @@
     <input type="submit" value="Send">
 
 
+
 </form:form>
+<a href="${pageContext.request.contextPath}/admin/rail/list">Back to the list</a>
 </body>
 </html>

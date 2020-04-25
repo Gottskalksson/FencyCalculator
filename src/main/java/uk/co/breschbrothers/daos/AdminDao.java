@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @Repository
+//sprawdzic transakcje + jak dziala proxy w springu
 @Transactional
 public class AdminDao {
 

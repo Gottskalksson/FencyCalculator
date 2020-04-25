@@ -19,7 +19,7 @@
             <table>
                 <tr>
                     <td>
-                        <form:label path="fencyList">Fency Type: </form:label>
+                        <form:label path="fencyList">Fence Type: </form:label>
                     </td>
                     <td>
                         <form:select name="fencyList" path="fencyList" items="${fencyList}" itemLabel="type"
@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="fenceLength">Fency Length: </label>
+                        <label for="fenceLength">Fence Length: </label>
                     </td>
                     <td>
                         <input name="fenceLength" id="fenceLength" type="number" value="1" min="1" max="500" step="0.1"> meter

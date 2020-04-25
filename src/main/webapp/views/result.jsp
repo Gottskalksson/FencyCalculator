@@ -17,7 +17,7 @@
             <td>Type</td>
             <td>Quantity</td>
             <td>Price Each</td>
-            <td>Total Price (in £)</td>
+            <td>Total Price</td>
         </tr>
         <c:forEach items="${itemList}" var="item">
         <tr>

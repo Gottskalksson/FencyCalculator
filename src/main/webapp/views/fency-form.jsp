@@ -39,5 +39,6 @@
 
 
 </form:form>
+<a href="${pageContext.request.contextPath}/admin/fency/list">Back to the list</a>
 </body>
 </html>
